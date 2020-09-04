@@ -34,9 +34,9 @@
 <br><br>
 <h3>Some projects I have worked/am working on</h3>
 <p>I usually work on some private projects and some public projects you can see in my profile. But note that all the work I do in teams is located in my public Github organizations. My most cool repos might be there :)</p>
-<img alt="Mind's Crawl" title="Mind's Crawl" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=physarumAdv&repo=minds_crawl" />
-<img alt="Find most similar image" title="Find most similar image" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=kolayne&repo=find_most_similar_image" />
-<img alt="LentaBot" title="LentaBot" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=Ni-Ma-Ta&repo=LentaBot" />
+<p><a href="https://github.com/physarumAdv/minds_crawl"><img alt="Mind's Crawl" title="Mind's Crawl" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=physarumAdv&repo=minds_crawl" /></a></p>
+<p><a href="https://github.com/kolayne/find_most_similar_image"><img alt="Find most similar image" title="Find most similar image" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=kolayne&repo=find_most_similar_image" /></a></p>
+<p><a href="https://github.com/Ni-Ma-Ta/LentaBot"><img alt="LentaBot" title="LentaBot" src="https://github-readme-stats.vercel.app/api/pin/?show_owner=true&username=Ni-Ma-Ta&repo=LentaBot" /></a></p>
 
 <br>
 <p align="center">
