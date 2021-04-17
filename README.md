@@ -1,7 +1,7 @@
 # Hi 👋, I'm Nikolay Nechaev
 ### A high school student learning IT (programming, cybersecurity, etc) from Russia
 
-I want to remind you, that if you're investigating my work, you should not only look throw my public repos, but also throw repos in my public organizations: almost everything I work on with other people is stored in organizations. Probably, my most cool projects are there
+I want to remind you, that if you're exploring my work, you should not only look through my public repos, but also through repos in my public organizations: almost everything I work on with other people is stored in organizations. Probably, my most cool projects are there
 
 ## About me
 I'm studying in the <a href="https://vk.com/silaedr" target="blank">Silaeder classes</a> of the <a href="https://schuv.mskobr.ru" target="blank">Moscow South-Eastern School named after V.I. Chuikov</a> (11th grade)
