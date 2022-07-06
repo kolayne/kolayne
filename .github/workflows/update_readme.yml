@@ -52,4 +52,3 @@ jobs:
           plugin_languages_threshold: 0%
           plugin_lines: yes
           repositories: 1000
-          repositories_forks: yes
