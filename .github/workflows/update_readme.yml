@@ -12,7 +12,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Update metrics
+        uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
           # The following scopes are required:
@@ -46,3 +47,9 @@ jobs:
           plugin_lines: yes
           repositories: 1000
           repositories_affiliations: owner collaborator organization_member
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fixup the last commit
+        run: |
+          git commit -C HEAD --amend
+          git push --force origin master
