@@ -8,7 +8,7 @@ on:
   push: {branches: ["master", "main"]}
 
 env:
-  DESIRED_COMMIT_MESSAGE: Update github-metrics.svg
+  DESIRED_COMMIT_MESSAGE: Update github-metrics.svg - [Skip GitHub Action]
 
 jobs:
   github-metrics:
@@ -51,27 +51,36 @@ jobs:
           plugin_lines: yes
           repositories: 1000
           repositories_affiliations: owner collaborator organization_member
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
           # It is required to fetch all commits to be able to force-push later
           fetch-depth: 0
-      - name: Make sure the last two commits should be combined
-        id: commit_checker
+
+      - name: Prepare commits to combine, if needed
+        # If either this or the previous commit is meaningful, should do nothing.
+        # Otherwise, combine the two.
+        id: commits_preparer
         run: |
           set -e
-          git reset --soft HEAD^
-          if [[ "$(git log -1 --pretty=%B)" == "$DESIRED_COMMIT_MESSAGE" ]]; then
-            echo "::set-output name=should_amend::true"
+          echo "::set-output name=should_commit::false"  # False by default
+
+          # Look at the last two commits to see if they are what we need
+          for i in 1 2; do
+            if [[ "$(git log -1 --pretty=%B)" != "$DESIRED_COMMIT_MESSAGE" ]]; then
+              exit 0  # A meaningful message. Thus, nothing to do further
+            fi
             git reset --soft HEAD^
-          else
-            echo "::set-output name=should_amend::false"
-          fi
+          done
+
+          echo "::set-output name=should_commit::true"
+
       - name: Combine commits
-        if: steps.commit_checker.outputs.should_amend == true
+        if: steps.commits_preparer.outputs.should_commit == true
         uses: EndBug/add-and-commit@v9
         with:
-          message: Update github-metrics.svg
+          message: ${{env.DESIRED_COMMIT_MESSAGE}}
 
           default_author: github_actions
 
