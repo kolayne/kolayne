@@ -64,11 +64,14 @@ jobs:
         id: commits_preparer
         run: |
           set -e
-          echo "::set-output name=should_commit::false"  # False by default
+
+          echo 'Desired:' "$DESIRED_COMMIT_MESSAGE"
 
           # Look at the last two commits to see if they are what we need
           for i in 1 2; do
+            echo 'Actual:' && git log -1 --pretty=%B
             if [[ "$(git log -1 --pretty=%B)" != "$DESIRED_COMMIT_MESSAGE" ]]; then
+              echo "::set-output name=should_commit::false"
               exit 0  # A meaningful message. Thus, nothing to do further
             fi
             git reset --soft HEAD^
