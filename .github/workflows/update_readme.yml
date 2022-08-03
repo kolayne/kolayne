@@ -80,7 +80,7 @@ jobs:
           echo "::set-output name=should_commit::true"
 
       - name: Combine commits
-        if: steps.commits_preparer.outputs.should_commit == true
+        if: steps.commits_preparer.outputs.should_commit == 'true'
         uses: EndBug/add-and-commit@v9
         with:
           message: ${{env.DESIRED_COMMIT_MESSAGE}}
