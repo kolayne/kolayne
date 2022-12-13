@@ -74,13 +74,13 @@ jobs:
           for i in 1 2; do
             echo 'Actual:' && git log -1 --pretty=%B
             if [[ "$(git log -1 --pretty=%B)" != "$DESIRED_COMMIT_MESSAGE" ]]; then
-              echo "::set-output name=should_commit::false"
+              echo should_commit=false >> "$GITHUB_OUTPUT"
               exit 0  # A meaningful message. Thus, nothing to do further
             fi
             git reset --soft HEAD^
           done
 
-          echo "::set-output name=should_commit::true"
+          echo should_commit=true >> "$GITHUB_OUTPUT"
 
       - name: Combine commits
         if: steps.commits_preparer.outputs.should_commit == 'true'
