@@ -57,7 +57,7 @@ jobs:
           repositories_affiliations: owner collaborator organization_member
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # It is required to fetch all commits to be able to force-push later
           fetch-depth: 0
