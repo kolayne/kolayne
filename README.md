@@ -1,6 +1,6 @@
 ## :wave: Hey there! It's Nikolay Nechaev aka @kolayne
 
-A System software developer and a student at Innopolis University.
+A system software developer and a student at Innopolis University.
 
 ### Social networks
 
