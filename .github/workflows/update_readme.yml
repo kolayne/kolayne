@@ -93,4 +93,4 @@ jobs:
 
           pathspec_error_handling: exitImmediately
 
-          push: origin master --force
+          push: origin master --force-with-lease
