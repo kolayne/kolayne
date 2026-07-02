@@ -57,7 +57,7 @@ jobs:
           repositories_affiliations: owner collaborator organization_member
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # It is required to fetch all commits to be able to force-push later
           fetch-depth: 0
@@ -85,7 +85,7 @@ jobs:
 
       - name: Combine commits
         if: steps.commits_preparer.outputs.should_commit == 'true'
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           message: ${{env.DESIRED_COMMIT_MESSAGE}}
 
